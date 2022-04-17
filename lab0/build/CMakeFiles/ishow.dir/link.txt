@@ -1,0 +1,1 @@
+/usr/bin/gcc -O -Wall -m32 -rdynamic CMakeFiles/ishow.dir/src/ishow.c.o -o ishow  -lm 

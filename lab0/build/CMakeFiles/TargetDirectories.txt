@@ -1,0 +1,4 @@
+/home/grant/docs/college/year-1/spring/cs33/seas/lab0/build/CMakeFiles/btest.dir
+/home/grant/docs/college/year-1/spring/cs33/seas/lab0/build/CMakeFiles/ishow.dir
+/home/grant/docs/college/year-1/spring/cs33/seas/lab0/build/CMakeFiles/edit_cache.dir
+/home/grant/docs/college/year-1/spring/cs33/seas/lab0/build/CMakeFiles/rebuild_cache.dir

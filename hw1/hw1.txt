@@ -1,0 +1,44 @@
+2.71
+	(A) This does not work as a negative number requires all 32 bits of the integer to represent it in 2's complement form. The incompetent employee assumed that when shifting, the data would only be stored in the 8 least significant bits. 
+	(B)
+		int xbyte(packed_t word, int bytenum){
+			char ret = (word >> (bytenum << 3));
+			return ret;
+		}
+
+2.82
+	(A) False. x = Tmin, y = <any integer>
+	(B) True
+		((x + y) << 4) + y - x == 17*y + 15*x
+		16*x + 16*y + y - x == 17*y + 15*y
+		17*y + 15*x == 17*y + 15*x
+	(C) True
+		~x + ~y + 1 == ~(x + y)
+		-x - 1 - y - 1 + 1 == -(x + y) - 1
+		-x - y + 1 - 1 - 1 == -x - y - 1
+		-x - y - 1 == -x - y - 1
+	(D) True
+		ux - uy == -(unsigned)(y - x)
+		ux - uy == (unsigned)(-(y-x))
+		ux - uy == (unsigned)(x-y)
+		ux - uy == (unsigned)x - (unsigned)y
+		ux - uy == ux - uy
+	(E) True. The 2 least significant bits will always be 00 and the 2 most significant bits stay the same.
+		Assume 4 bits:
+			((x >> 2) << 2) <= x
+
+			((0011 >> 2) << 2) <= 0011
+			(0000 << 2) <= 0011
+			0000 <= 0011
+
+			((1000 >> 2) << 2) <= 1000
+			(1110 << 2) <= 1000
+			1000 <= 1000
+
+			((1100 >> 2) << 2) <= 1100
+			(1111 << 2) <= 1100
+			1100 <= 1100
+
+			((0100 >> 2) << 2) <= 0100
+			(0001 << 2) <= 0100
+			0100 <= 0100
