@@ -1,0 +1,36 @@
+3.60
+(A) %rdi => x; %rsi => n; %rax => result; %rdx => mask
+(B) result = 0; mask = 1
+(C) mask != 0
+(D) mask <<= n
+(E) result |= x & mask
+(F)
+long loop(long x, long n){
+	long result = 0;
+	long mask;
+	for(mask = 1; mask != 0; mask = mask << n){
+		result |= x & mask;
+	}
+	return result;
+}
+
+3.63
+switch(n){
+	case 60:
+	case 62:
+		result = x * 8;
+		break;
+	case 63:
+		result = x >> 3;
+		break;
+	case 64:
+		x = 15 * x;
+	case 65:
+		x *= x;
+	default:
+		result = 75 + x;
+}
+
+3.64.
+(A) A + sizeof(long) * (S*T*i + T*j + k)
+(B) R = 7; S = 5; T = 15
