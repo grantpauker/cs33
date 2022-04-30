@@ -1,0 +1,14 @@
+3.70
+(A) ep.p => 0
+		ep.y => 8
+		ep.x => 0
+		ep.next => 8
+(B) 16
+(C) up->e2.x = *(up->e2.next->e1.p) - up->e2.next->e1.y
+
+2.89.
+(A) True. Every float can be represented perfectly as a double because doubles have more precision than floats. 
+(B) False. x = INT_MIN, y = 1
+(C) True. Doubles can perfectly represent all integers up to 53 bits and no 3 integers added together will be greater than 53 bits. 
+(D) False. x = 1804289383, y = 846930886, z =  1681692777
+(E) False. x = 1, z = 0
