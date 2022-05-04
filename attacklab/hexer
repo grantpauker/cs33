@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-grep -o '^[^#]*' $1 | xxd -r -p | tee raw_$1
-
+grep -o '^[^#]*' $1 | xxd -r -p | tee $1.raw
