@@ -19,3 +19,6 @@ This file contains materials for one instance of the attacklab.
     
 `hex2raw`
 * Utility program to generate byte sequences. See documentation in lab handout.
+ 
+`hexer`
+* Custom utility program to generate byte sequences. Operates similar to hex2raw

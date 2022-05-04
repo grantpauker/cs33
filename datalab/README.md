@@ -51,7 +51,7 @@ Please carefully read the instructions in this file and in `bits.c`.
 Use the dlc compiler (`./dlc`) to automatically check your version of `bits.c` for compliance with the coding guidelines:
 
 ```
-unix> ./dlc bits.c
+./dlc bits.c
 ```
 
 `dlc` returns silently if there are no problems with your code.
@@ -59,7 +59,7 @@ Otherwise it prints messages that flag any problems. Running `dlc` with
 the `-e` switch:
 
 ```
-unix> ./dlc -e bits.
+./dlc -e bits.
 ```
 
 causes `dlc` to print counts of the number of operators used by each function.
@@ -134,8 +134,8 @@ make
 Example usages:
 
 ```
-$./ishow 0x27
+./ishow 0x27
 Hex = 0x00000027,	Signed = 39,	Unsigned = 39
-$./ishow 27
+./ishow 27
 Hex = 0x0000001b,	Signed = 27,	Unsigned = 27
 ```
