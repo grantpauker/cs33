@@ -1,0 +1,28 @@
+void soln(float a[], float p[], long n){
+	long i;
+	float val, prev_val;
+	float tmp0, tmp1, tmp2, tmp3;
+	
+	prev_val = a[0];
+	p[0] = a[0];
+
+	for(i = 1; i < n-4; i+=4){
+		tmp0 = prev_val + a[i];
+		tmp1 = tmp0 + a[i+1];
+		tmp2 = tmp1 + a[i+2];
+		tmp3 = tmp2 + a[i+3];
+
+		p[i] = tmp0;
+		p[i+1] = tmp1;
+		p[i+2] = tmp2;
+		p[i+3] = tmp3;
+		prev_val = prev_val + (a[i] + a[i+1] + a[i+2] + a[i+3]);
+	}
+
+	for(; i < n; i++){
+		prev_val += a[i];
+		p[i] = prev_val;
+	}
+}
+
+The 3 cycle latency of floating point operations combined with the number of floating point units my CPU has (assuming to be 4), limits the minimum CPE I can achieve.
