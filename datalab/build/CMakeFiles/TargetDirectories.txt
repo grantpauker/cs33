@@ -1,2 +1,0 @@
-/u/ee/ugrad/pauker/cs33/lab1/build/CMakeFiles/btest.dir
-/u/ee/ugrad/pauker/cs33/lab1/build/CMakeFiles/ishow.dir

@@ -1,1 +1,0 @@
-/usr/bin/cc  -O -Wall -m32    CMakeFiles/btest.dir/src/btest.c.o CMakeFiles/btest.dir/src/bits.c.o CMakeFiles/btest.dir/src/decl.c.o CMakeFiles/btest.dir/src/tests.c.o  -o btest -rdynamic -lm 
