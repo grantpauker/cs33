@@ -13,7 +13,7 @@
 #define KERNEL kernel_omp
 #endif
 
-// Returns the current system time in microseconds
+// returns the current system time in microseconds
 long long get_time()
 {
   struct timeval tv;
@@ -32,7 +32,7 @@ double gettime()
 
 void usage(int argc, char **argv)
 {
-  fprintf(stderr, "Usage: %s <len> <penalty> <num_threads>\n", argv[0]);
+  fprintf(stderr, "Usage: %s <len> <num_threads>\n", argv[0]);
   fprintf(stderr, "\t<len>            - length of seq (multiple of 64) \n");
   fprintf(stderr, "\t<num_threads>    - no. of threads\n");
   exit(1);
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 {
 
   // the lengths of the two sequences should be able to divided by 16.
-  // And at current stage  max_rows needs to equal max_cols
+  // at current stage max_rows needs to equal max_cols
   int len, omp_num_threads;
   if (argc == 3)
   {
@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 
   memset(input, 0, sizeof(int) * max_rows * max_cols);
 
-  // Randomize the input matrix.
+  // randomize the input matrix
   for (uint64_t i = 1; i < max_rows; i++)
   {
     input[i * max_cols] = rand() % 10 + 1;
@@ -93,7 +93,7 @@ int main(int argc, char **argv)
     input[j] = rand() % 10 + 1;
   }
 
-  // Generate the reference matrix.
+  // generate the reference matrix
   for (uint64_t i = 1; i < max_cols; i++)
   {
     for (uint64_t j = 1; j < max_rows; j++)
@@ -110,8 +110,7 @@ int main(int argc, char **argv)
   {
     input[j] = -j * penalty;
   }
-
-// Set number of threads.
+// set number of threads
 #ifdef OPENMP
   omp_set_num_threads(omp_num_threads);
 #else

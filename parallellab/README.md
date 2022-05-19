@@ -1,4 +1,4 @@
-# UCLA-CS33-Spring22-OpenMP
+# Parallel Lab
 
 This is the OpenMP lab for UCLA CS33 Spring 2022. The leading TA of this lab is Zhengrong Wang (seanzw@ucla.edu).
 
