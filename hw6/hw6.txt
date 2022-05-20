@@ -1,0 +1,22 @@
+6.41. 25%
+
+6.45.
+void transpose_fast(int *src, int *dst, int dim)
+{
+	int c, r, i, j;
+	int r_stride = 32;
+	int c_stride = 32;
+	for (r = 0; r < dim; r += r_stride)
+	{
+		for (c = 0; c < dim; c += c_stride)
+		{
+			for (i = r; i < MIN(r + r_stride, dim); i++)
+			{
+				for (j = c; j < MIN(c + c_stride, dim); j++)
+				{
+					dst[j * dim + i] = src[i * dim + j];
+				}
+			}
+		}
+	}
+}
