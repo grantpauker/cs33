@@ -58,13 +58,13 @@ int main(int argc, char **argv)
 
   if (len % 64 != 0)
   {
-    fprintf(stderr, "error: len should be multiple of 64.");
+    fprintf(stderr, "error: len should be multiple of 64");
     exit(1);
   }
 
   if (omp_num_threads <= 0 || omp_num_threads > 32)
   {
-    fprintf(stderr, "Number of threads should be 1-32.");
+    fprintf(stderr, "number of threads should be 1-32");
     exit(1);
   }
 
@@ -123,14 +123,14 @@ int main(int argc, char **argv)
   kernel_seq(truth, ref, max_rows, max_cols, penalty);
 #endif
 
-  printf("Num of threads: %d. Matrix size %dx%d\n", omp_num_threads, max_rows,
+  printf("num of threads: %d; matrix size %dx%d\n", omp_num_threads, max_rows,
          max_cols);
 
   long long start_time = get_time();
   KERNEL(input, ref, max_rows, max_cols, penalty);
   long long end_time = get_time();
 
-  printf("Total time: %ld us\n", (end_time - start_time));
+  printf("total time: %ld us\n", (end_time - start_time));
 
 #ifdef CHECK
   for (int i = 0; i < max_rows; ++i)
@@ -140,13 +140,13 @@ int main(int argc, char **argv)
       int64_t idx = i * max_cols + j;
       if (truth[idx] != input[idx])
       {
-        fprintf(stderr, "Wrong result at %dx%d %d != %d.\n", i, j, truth[idx],
+        fprintf(stderr, "wrong result at %dx%d %d != %d.\n", i, j, truth[idx],
                 input[idx]);
         exit(1);
       }
     }
   }
-  printf("All result match!\n");
+  printf("all result match!\n");
 #endif
 
   free(ref);
