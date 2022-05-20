@@ -40,7 +40,6 @@ void usage(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-
   // the lengths of the two sequences should be able to divided by 16.
   // at current stage max_rows needs to equal max_cols
   int len, omp_num_threads;

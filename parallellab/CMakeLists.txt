@@ -3,22 +3,17 @@ project(parallellab)
 
 add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 
-set(CMAKE_C_FLAGS "-std=c99 -O3 -DOPENMP -DCHECK")
+set(CMAKE_C_FLAGS "-std=c99 -O3 -fopenmp")
 
 find_package(OpenMP REQUIRED)
 
 set(SEQ_SOURCES main.c kernel_seq.c)
 set(OMP_SOURCES main.c kernel_seq.c kernel_omp.c)
 
-
-#add_executable(seq ${SEQ_SOURCES})
-#add_executable(omp ${OMP_SOURCES})
+add_executable(seq ${SEQ_SOURCES})
+add_executable(omp ${OMP_SOURCES})
 add_executable(check ${OMP_SOURCES})
 
-
-#target_link_libraries(omp PUBLIC OpenMP::OpenMP_C)
-target_link_libraries(check PUBLIC OpenMP::OpenMP_C)
-
-#target_compile_options(seq PUBLIC -DKERNEL=kernel_seq)
-#target_compile_options(omp PUBLIC -DOPENMP)
-#target_compile_options(check PUBLIC -DOPENMP -DCHECK "${OpenMP_C_FLAGS}")
+target_compile_options(seq PUBLIC -DKERNEL=kernel_seq)
+target_compile_options(omp PUBLIC -DOPENMP)
+target_compile_options(check PUBLIC -DOPENMP -DCHECK)
