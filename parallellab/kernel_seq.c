@@ -4,7 +4,6 @@
 
 void kernel_seq(int *input, int *ref, int64_t rows, int64_t cols, int penalty)
 {
-
   for (int i = 1; i < rows; ++i)
   {
     for (int j = 1; j < cols; ++j)
