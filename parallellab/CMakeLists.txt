@@ -6,9 +6,10 @@ add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 set(CMAKE_C_FLAGS "-std=c99 -O3 -fopenmp")
 
 find_package(OpenMP REQUIRED)
+include_directories(include)
 
-set(SEQ_SOURCES main.c kernel_seq.c)
-set(OMP_SOURCES main.c kernel_seq.c kernel_omp.c)
+set(SEQ_SOURCES src/main.c src/kernel_seq.c)
+set(OMP_SOURCES src/main.c src/kernel_seq.c src/kernel_omp.c)
 
 add_executable(seq ${SEQ_SOURCES})
 add_executable(omp ${OMP_SOURCES})
