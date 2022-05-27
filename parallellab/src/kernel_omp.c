@@ -30,16 +30,17 @@ void kernel_omp(int *input, int *ref, int64_t rows, int64_t cols, int penalty)
             // compute kernel with row-wise traversal
             for (int i = i_start; i < i_end; ++i)
             {
+                int inputNW = input[idx - cols - 1];
+                int inputW = input[idx - 1];
+                int inputN = input[idx - cols];
                 for (int j = j_start; j < j_end; ++j)
                 {
-                    int64_t idxNW = idx - cols - 1;
                     int64_t idxN = idx - cols;
-                    int64_t idxW = idx - 1;
-                    int inputNW = input[idxNW];
-                    int inputW = input[idxW];
-                    int inputN = input[idxN];
+                    inputN = input[idxN];
                     int r = ref[idx];
                     input[idx] = maximum(inputNW + r, inputW - penalty, inputN - penalty);
+                    inputW = input[idx];
+                    inputNW = inputN;
                     idx++;
                 }
                 idx += cols - BLOCK_SIZE;
@@ -68,16 +69,17 @@ void kernel_omp(int *input, int *ref, int64_t rows, int64_t cols, int penalty)
             // compute kernel with row-wise traversal
             for (int i = i_start; i < i_end; ++i)
             {
+                int inputNW = input[idx - cols - 1];
+                int inputW = input[idx - 1];
+                int inputN = input[idx - cols];
                 for (int j = j_start; j < j_end; ++j)
                 {
-                    int64_t idxNW = idx - cols - 1;
                     int64_t idxN = idx - cols;
-                    int64_t idxW = idx - 1;
-                    int inputNW = input[idxNW];
-                    int inputW = input[idxW];
-                    int inputN = input[idxN];
+                    inputN = input[idxN];
                     int r = ref[idx];
                     input[idx] = maximum(inputNW + r, inputW - penalty, inputN - penalty);
+                    inputW = input[idx];
+                    inputNW = inputN;
                     idx++;
                 }
                 idx += cols - BLOCK_SIZE;
