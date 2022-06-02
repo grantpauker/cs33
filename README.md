@@ -1,4 +1,4 @@
-# CS 33
+# UCLA CS 33 (Spring 2022)
 
 | Lab | Score |
 | ------- | ----- |
